@@ -1,0 +1,13 @@
+[Unit]
+Description=PulseAudio system server
+After=bluetooth.target
+
+[Service]
+Type=notify
+EnvironmentFile=/etc/pi-rfid-jukebox-env
+ExecStartPre=bluetoothctl -- connect ${SPEAKER_BT_MAC}
+ExecStart=pulseaudio --daemonize=no --realtime --log-target=journal
+Restart=on-failure
+
+[Install]
+WantedBy=default.target

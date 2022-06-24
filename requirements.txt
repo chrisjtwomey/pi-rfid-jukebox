@@ -1,9 +1,7 @@
 Adafruit_Blinka==8.0.2
 adafruit_circuitpython_pn532==2.3.9
 adafruit_pn532==1.2.1
-board==1.0
 Flask==2.1.2
-ndef==0.2
 ndeflib==0.3.3
 spotipy==2.20.0
 Werkzeug==2.1.2

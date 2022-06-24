@@ -1,0 +1,11 @@
+[Unit]
+Description=Python RFID Jukebox
+After=librespot.service
+
+[Service]
+# Command to execute when the service is started
+EnvironmentFile=/etc/pi-rfid-jukebox-env
+ExecStart=/usr/bin/python3 /usr/local/bin/jukebox.py
+
+[Install]
+WantedBy=default.target

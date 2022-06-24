@@ -1,0 +1,18 @@
+[Unit]
+Description=Librespot (an open source Spotify client)
+Documentation=https://github.com/librespot-org/librespot
+Documentation=https://github.com/librespot-org/librespot/wiki/Options
+Wants=network.target sound.target
+After=network.target sound.target pulseaudio.service
+
+[Service]
+Restart=always
+RestartSec=10
+ExecStart=/usr/bin/librespot \
+    --backend alsa \
+    --cache ${HOME}/.librespot \
+    --initial-volume 75 \
+    --enable-volume-normalisation
+
+[Install]
+WantedBy=default.target

@@ -147,17 +147,17 @@ class ServerThread(threading.Thread):
         self.ctx.push()
 
     def run(self):
-        log.debug("starting http server")
+        log.info("starting http server")
         self.server.serve_forever()
 
     def shutdown(self):
-        log.debug("stopping http server")
+        log.info("stopping http server")
         self.server.shutdown()
 
 
 if __name__ == "__main__":
     cwd = os.path.dirname(os.path.realpath(__file__))
-    logging.config.fileConfig(os.path.join("logging.ini"))
+    logging.config.fileConfig(os.path.join(cwd, "logging.dev.ini"))
     log = logging.getLogger("main")
 
     # setup reader for mifare classic1k cards
